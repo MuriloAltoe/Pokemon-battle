@@ -1,13 +1,7 @@
 import requests
 
 class Movimento():
-
-    def __init__(self):
-        self.name = ''
-        self.acc = ''
-        self.dmg = ''
-        self.type = {}
-
+    
     def leMov(self, moveLinkApi):
         pokeapi = moveLinkApi
         res = requests.get(pokeapi)
@@ -21,4 +15,12 @@ class Movimento():
         print(self.name)
         print(self.acc)
         print(self.dmg)
-        print(self.type)
+        print(self.type['name'])
+
+    def __init__(self):
+        self.name = ''
+        self.acc = ''
+        self.dmg = ''
+        self.type = {}
+
+    
