@@ -22,6 +22,7 @@ class Pokemon():
         self.level = random.randint(50,76)
         self.name = json["name"]
         self.life = round(json["stats"][0]["base_stat"]*0.03*self.level)
+        self.actualLife = self.life
         self.atack = round(json["stats"][1]["base_stat"]*0.03*self.level)
         self.defense = round(json["stats"][2]["base_stat"]*0.03*self.level)
         self.spAtack = round(json["stats"][3]["base_stat"]*0.03*self.level)

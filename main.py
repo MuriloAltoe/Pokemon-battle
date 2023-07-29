@@ -10,4 +10,6 @@ if escolha == 1:
 elif escolha == 2:
     batalha = Batalha()
     batalha.speedContest()
+
+    batalha.showBattle()
     pass

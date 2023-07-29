@@ -10,6 +10,8 @@ class Movimento():
         self.acc = json["accuracy"]
         self.dmg = json["power"]
         self.type = json["type"]
+        self.pp = json["pp"]
+        self.actualPp = self.pp
 
     def toString(self,):
         print(self.name)
