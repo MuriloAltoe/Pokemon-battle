@@ -1,3 +1,4 @@
+# cache do python
 __pycache__
-
-venv
+# ambiente virtual
+/venv

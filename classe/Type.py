@@ -7,7 +7,7 @@ class Type():
         pass
 
     def setType(self, id):
-        link = "https://pokeapi.co/api/v2/type/"+id
+        link = "https://pokeapi.co/api/v2/type/"+str(id)
         json = getJSON(link)
 
         self.name = json["name"]
@@ -15,7 +15,18 @@ class Type():
 
         ...
 
-    def checkType(self, otherType): #TODO: verificar se o tipo é mais forte que o parametro
+    def isWeaker(self, otherType): # verificar se o tipo é mais fraco que o parametro
+        if otherType in self.damageRelations.halfTo:
+            return True
+        else:
+            return False
+        ...
+
+    def isStronger(self, otherType): # verificar se o tipo é mais forte que o parametro
+        if otherType in self.damageRelations.doubleTo:
+            return True
+        else:
+            return False
         ...
 
 
@@ -31,24 +42,23 @@ class DamageRelations():
         ...
 
     def setDamageRelations(self, json):
-#
         for i in json["damage_relations"]["double_damage_from"]:
-            self.doubleFrom.insert(i["name"])
+            self.doubleFrom.append(i["name"])
             ...
         for i in json["damage_relations"]["double_damage_to"]:
-            self.doubleTo.insert(i["name"])
+            self.doubleTo.append(i["name"])
             ...
-#
+            
         for i in json["damage_relations"]["half_damage_from"]:
-            self.halfFrom.insert(i["name"]) 
+            self.halfFrom.append(i["name"]) 
             ...
         for i in json["damage_relations"]["half_damage_to"]:
-            self.halfTo.insert(i["name"]) 
+            self.halfTo.append(i["name"]) 
             ...
-#
+
         for i in json["damage_relations"]["no_damage_from"]:
-            self.noFrom.insert(i["name"]) 
+            self.noFrom.append(i["name"]) 
             ...
         for i in json["damage_relations"]["no_damage_to"]:
-            self.noTo.insert(i["name"]) 
+            self.noTo.append(i["name"]) 
             ...
