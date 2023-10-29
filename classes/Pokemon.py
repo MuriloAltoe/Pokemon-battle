@@ -1,6 +1,6 @@
 from utils.getLink import getJSON
-from classe.Type import Type
-from classe.Move import Move
+from classes.Type import Type
+from classes.Move import Move
 #
 import random
 

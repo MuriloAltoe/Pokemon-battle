@@ -1,4 +1,4 @@
-from classe.Pokemon import Pokemon
+from classes.Pokemon import Pokemon
 
 class Battle():
 

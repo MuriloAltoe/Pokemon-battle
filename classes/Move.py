@@ -14,8 +14,10 @@ class Move():
         link = "https://pokeapi.co/api/v2/move/"+str(id)
         json = getJSON(link)
 
+        self.pp = json["pp"]
         self.name = json["name"]
         self.damageClass = json["damage_class"]["name"]
         self.priority = json["priority"]
         self.type = json["type"]["name"]
+
         ...
